@@ -329,7 +329,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(#)\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
+			<string>^\s*#\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
 			<key>name</key>
 			<string>meta.preprocessor.source.cs</string>
 		</dict>
