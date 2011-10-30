@@ -396,6 +396,8 @@
 					<string>comment.block.source.cs</string>
 				</dict>
 				<dict>
+					<key>begin</key>
+					<string>//</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -406,6 +408,8 @@
 					</dict>
 					<key>match</key>
 					<string>(//).*$\n?</string>
+					<key>end</key>
+					<string>$\n?</string>
 					<key>name</key>
 					<string>comment.line.double-slash.source.cs</string>
 				</dict>
