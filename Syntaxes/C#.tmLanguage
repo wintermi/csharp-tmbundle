@@ -7,9 +7,9 @@
 		<string>cs</string>
 	</array>
 	<key>foldingStartMarker</key>
-	<string>^\s*#region|^\s*/\*|^(?![^{]*?//|[^{]*?/\*(?!.*?\*/.*?\{)).*?\{\s*($|//|/\*(?!.*?\*/.*\S))</string>
+	<string>^\s*#\s*region|^\s*/\*|^(?![^{]*?//|[^{]*?/\*(?!.*?\*/.*?\{)).*?\{\s*($|//|/\*(?!.*?\*/.*\S))</string>
 	<key>foldingStopMarker</key>
-	<string>^\s*#endregion|^\s*\*/|^\s*\}</string>
+	<string>^\s*#\s*endregion|^\s*\*/|^\s*\}</string>
 	<key>keyEquivalent</key>
 	<string>^~C</string>
 	<key>name</key>
