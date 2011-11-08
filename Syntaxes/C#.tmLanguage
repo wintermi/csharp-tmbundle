@@ -387,7 +387,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(event|delegate|explicit|implicit|in|add|remove|set|get)\b</string>
+					<string>\b(var|event|delegate|explicit|implicit|in|add|remove|set|get)\b</string>
 					<key>name</key>
 					<string>keyword.other.source.cs</string>
 				</dict>
@@ -574,7 +574,7 @@
 		<key>storage-modifiers</key>
 		<dict>
 			<key>match</key>
-			<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|operator)\b</string>
+			<string>\b(event|delegate|internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|operator)\b</string>
 			<key>name</key>
 			<string>storage.modifier.source.cs</string>
 		</dict>

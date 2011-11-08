@@ -21,5 +21,3 @@ Regions are marked in the symbol list as well.
 ## Known Issues
 
 * object foo = new object() marked as function
-* The var type is not currently a keyword
-* delegate needs to be a storage type?
