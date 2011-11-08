@@ -288,67 +288,86 @@
 					<string>constant.numeric.source.cs</string>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#doubleQuotedStringLiteral</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#doubleQuotedString</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#singleQuotedString</string>
-				</dict>
-			</array>
-		</dict>
-		<key>doubleQuotedString</key>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.source.cs</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>"</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.source.cs</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>string.quoted.double.source.cs</string>
-			<key>patterns</key>
-			<array>
-				<dict>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.source.cs</string>
+						</dict>
+					</dict>
 					<key>match</key>
-					<string>\\.</string>
+					<string>@"([^"]|"")*"</string>
 					<key>name</key>
-					<string>constant.character.escape.source.cs</string>
+					<string>string.quoted.double.literal.source.cs</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.source.cs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.source.cs</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\.</string>
+							<key>name</key>
+							<string>constant.character.escape.source.cs</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.source.cs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.source.cs</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\.</string>
+							<key>name</key>
+							<string>constant.character.escape.source.cs</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
-		</dict>
-		<key>doubleQuotedStringLiteral</key>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.source.cs</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>@"([^"]|"")*"</string>
-			<key>name</key>
-			<string>string.quoted.double.literal.source.cs</string>
 		</dict>
 		<key>keywords</key>
 		<dict>
@@ -528,40 +547,6 @@
 			<string>^\s*#\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
 			<key>name</key>
 			<string>meta.preprocessor.source.cs</string>
-		</dict>
-		<key>singleQuotedString</key>
-		<dict>
-			<key>begin</key>
-			<string>'</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.source.cs</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>'</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.source.cs</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>string.quoted.single.xml</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\\.</string>
-					<key>name</key>
-					<string>constant.character.escape.source.cs</string>
-				</dict>
-			</array>
 		</dict>
 		<key>storage-modifiers</key>
 		<dict>
