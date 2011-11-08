@@ -164,49 +164,48 @@
 		<key>class</key>
 		<dict>
 			<key>begin</key>
-			<string>(?x)^\s*                                                    # start of line
-((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)   # class-modifiers
-((class|enum|struct)\s+                                                         # type
-([A-Za-z_]\w+))\b</string>
-			<key>captures</key>
+			<string>(?=\w?[\w\s]*(?:class|struct|interface|enum)\s+\w+)</string>
+			<key>end</key>
+			<string>}</string>
+			<key>endCaptures</key>
 			<dict>
-				<key>1</key>
+				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.source.cs</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>meta.signature.class.source.cs</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.source.cs</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.class.source.cs</string>
+					<string>punctuation.section.class.end.source.cs</string>
 				</dict>
 			</dict>
-			<key>end</key>
-			<string>{</string>
 			<key>name</key>
-			<string>meta.definition.class.source.cs</string>
+			<string>meta.class.source.cs</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#classInheritance</string>
+					<string>#storage-modifiers</string>
 				</dict>
-			</array>
-		</dict>
-		<key>classInheritance</key>
-		<dict>
-			<key>patterns</key>
-			<array>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.source.cs</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.class.source.java</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(class|struct|interface|enum)\s+(\w+)</string>
+					<key>name</key>
+					<string>meta.class.identifier.source.cs</string>
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>:</string>
@@ -228,13 +227,28 @@
 						</dict>
 					</array>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>{</string>
+					<key>end</key>
+					<string>(?=})</string>
+					<key>name</key>
+					<string>meta.class.body.source.java</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#code</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 		<key>code</key>
 		<dict>
 			<key>patterns</key>
 			<array>
-			    <dict>
+				<dict>
 					<key>begin</key>
 					<string>{</string>
 					<key>end</key>
@@ -397,13 +411,6 @@
 			<string>@"([^"]|"")*"</string>
 			<key>name</key>
 			<string>string.quoted.double.literal.source.cs</string>
-		</dict>
-		<key>storage-modifiers</key>
-		<dict>
-			<key>match</key>
-			<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|operator)\b</string>
-			<key>name</key>
-			<string>storage.modifier.source.cs</string>
 		</dict>
 		<key>keywords</key>
 		<dict>
@@ -584,6 +591,13 @@
 					</array>
 				</dict>
 			</array>
+		</dict>
+		<key>storage-modifiers</key>
+		<dict>
+			<key>match</key>
+			<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|operator)\b</string>
+			<key>name</key>
+			<string>storage.modifier.source.cs</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
