@@ -237,43 +237,43 @@
 		</dict>
 		<key>class</key>
 		<dict>
+			<key>begin</key>
+			<string>(?x)^\s*                                                    # start of line
+((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)   # class-modifiers
+((class|enum|struct)\s+                                                          # type
+([A-Za-z_]\w+))\b</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.source.cs</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>meta.signature.class.source.cs</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.source.cs</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.class.source.cs</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>{</string>
+			<key>name</key>
+			<string>meta.definition.class.source.cs</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>(?x)^\s*                                            # start of line
-((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)   # class-modifiers
-(class|enum|struct)\s+                                                          # type
-([A-Za-z_]\w+)\b</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.source.cs</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.source.cs</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.type.class.source.cs</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>{</string>
-					<key>name</key>
-					<string>meta.definition.class.source.cs</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#classInheritance</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#classInheritance</string>
 				</dict>
 			</array>
 		</dict>
