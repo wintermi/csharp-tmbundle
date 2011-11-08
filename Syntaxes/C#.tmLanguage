@@ -286,10 +286,6 @@
 					<string>keyword.other.using.source.cs</string>
 				</dict>
 				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.package.source.cs</string>
-				</dict>
 			</dict>
 			<key>match</key>
 			<string>^\s*(using)\s+([^ ;]*);</string>
