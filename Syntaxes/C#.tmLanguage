@@ -446,6 +446,14 @@
 			<array>
 				<dict>
 					<key>begin</key>
+					<string>\[</string>
+					<key>end</key>
+					<string>\]</string>
+					<key>name</key>
+					<string>meta.method.annotation.source.cs</string>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>(?!new)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
 					<key>end</key>
 					<string>}|(?=;)</string>
