@@ -10,14 +10,10 @@ Regions are marked in the symbol list as well.
 
 # Todo #
 
-## Features ##
+## Planned Features ##
 
 * Symbol List:
 	* Properties
 	* Operators
 	* #defines?
 	* Empty Regions?
-
-## Known Issues
-
-* object foo = new object() marked as function
