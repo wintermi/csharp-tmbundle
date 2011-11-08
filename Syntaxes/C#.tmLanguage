@@ -114,120 +114,12 @@
 			<string>#comments</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>(?x)^\s*
-((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)
-(class|enum|struct)\s+
-([A-Za-z_]\w+)\b</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.cs</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.source.cs</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.class.source.cs</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>{</string>
-			<key>name</key>
-			<string>meta.definition.class.source.cs</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#classInheritance</string>
-				</dict>
-			</array>
+			<key>include</key>
+			<string>#class</string>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>(?x)^\s*	                                                                            # start of line
-((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 		# method-modifiers
-\b((?:\w+\.)*[A-Za-z_]\w*)\b\s*	                                                                      		# type
-(operator)\s+        			                                                                      		# operator overload
-((?:\+|-|!|~|\+\+|--|true|false|\*|/|%|\&amp;|\||\^|&lt;&lt;|&gt;&gt;|==|!=|&lt;|&gt;|&lt;=|&gt;=)\s*)      # operator name
-(?=\()</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.cs</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.source.cs</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.cs</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.source.cs</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\)</string>
-			<key>name</key>
-			<string>meta.definition.operator.source.cs</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#statementRemainder</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>(?x)^\s*	                                                                        # start of line
-((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 	# method-modifiers
-\b((?:\w+\.)*[A-Za-z_]\w*)\b\s*		                                                                  	# type
-([A-Za-z_]\w*)\s*					         			                                   			 	# name
-(?=\()</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.modifier.source.cs</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.source.cs</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.source.cs</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\)</string>
-			<key>name</key>
-			<string>meta.definition.method.source.cs</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#statementRemainder</string>
-				</dict>
-			</array>
+			<key>include</key>
+			<string>#method</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -340,6 +232,48 @@
 					<string>\b(bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|void|class|struct|enum|interface)\b</string>
 					<key>name</key>
 					<string>storage.type.source.cs</string>
+				</dict>
+			</array>
+		</dict>
+		<key>class</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)^\s*                                            # start of line
+((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)   # class-modifiers
+(class|enum|struct)\s+                                                          # type
+([A-Za-z_]\w+)\b</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.source.cs</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.source.cs</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.class.source.cs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>{</string>
+					<key>name</key>
+					<string>meta.definition.class.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#classInheritance</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -456,6 +390,92 @@
 			<string>@"([^"]|"")*"</string>
 			<key>name</key>
 			<string>string.quoted.double.literal.source.cs</string>
+		</dict>
+		<key>method</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)^\s*	                                                                    # start of line
+((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 		# method-modifiers
+\b((?:\w+\.)*[A-Za-z_]\w*)\b\s*	                                                                      		# type
+(operator)\s+        			                                                                      		# operator overload
+((?:\+|-|!|~|\+\+|--|true|false|\*|/|%|\&amp;|\||\^|&lt;&lt;|&gt;&gt;|==|!=|&lt;|&gt;|&lt;=|&gt;=)\s*)      # operator name
+(?=\()</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.source.cs</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.source.cs</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.source.cs</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.source.cs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>name</key>
+					<string>meta.definition.operator.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#statementRemainder</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)^\s*	                                                                # start of line
+((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 	# method-modifiers
+\b((?:\w+\.)*[A-Za-z_]\w*)\b\s*		                                                                  	# type
+([A-Za-z_]\w*)\s*					         			                                   			 	# name
+(?=\()</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.modifier.source.cs</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.source.cs</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.source.cs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\)</string>
+					<key>name</key>
+					<string>meta.definition.method.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#statementRemainder</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
 		</dict>
 		<key>singleQuotedString</key>
 		<dict>
