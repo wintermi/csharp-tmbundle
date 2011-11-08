@@ -117,7 +117,7 @@
 			<key>begin</key>
 			<string>(?x)^\s*
 ((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)
-(class)\s+
+(class|enum|struct)\s+
 ([A-Za-z_]\w+)\b</string>
 			<key>captures</key>
 			<dict>
