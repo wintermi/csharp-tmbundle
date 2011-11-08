@@ -238,6 +238,10 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#method</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#code</string>
 						</dict>
 					</array>
@@ -271,7 +275,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#method</string>
+					<string>#method-call</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -442,83 +446,114 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?x)^\s*	                                                                    # start of line
-((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 		# method-modifiers
-\b((?:\w+\.)*[A-Za-z_]\w*)\b\s*	                                                                      		# type
-(operator)\s+        			                                                                      		# operator overload
-((?:\+|-|!|~|\+\+|--|true|false|\*|/|%|\&amp;|\||\^|&lt;&lt;|&gt;&gt;|==|!=|&lt;|&gt;|&lt;=|&gt;=)\s*)      # operator name
-(?=\()</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.source.cs</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.source.cs</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.source.cs</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.source.cs</string>
-						</dict>
-					</dict>
+					<string>(?!new)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
 					<key>end</key>
-					<string>\)</string>
+					<string>}|(?=;)</string>
 					<key>name</key>
-					<string>meta.definition.operator.source.cs</string>
+					<string>meta.method.source.cs</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#statementRemainder</string>
+							<string>#storage-modifiers</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(\w+)\s*\(</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.function.source.cs</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\)</string>
+							<key>name</key>
+							<string>meta.method.identifier.source.cs</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#builtinTypes</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?=\w.*\s+\w+\s*\()</string>
+							<key>end</key>
+							<string>(?=\w+\s*\()</string>
+							<key>name</key>
+							<string>meta.method.return-type.source.cs</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#builtinTypes</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>{</string>
+							<key>end</key>
+							<string>(?=})</string>
+							<key>name</key>
+							<string>meta.method.body.source.cs</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#code</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
+			</array>
+		</dict>
+		<key>method-call</key>
+		<dict>
+			<key>begin</key>
+			<string>([\w$]+)(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
 				<dict>
-					<key>begin</key>
-					<string>(?x)^\s*	                                                                # start of line
-((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 	# method-modifiers
-\b((?:\w+\.)*[A-Za-z_]\w*)\b\s*		                                                                  	# type
-([A-Za-z_]\w*)\s*					         			                                   			 	# name
-(?=\()</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.modifier.source.cs</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.source.cs</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.source.cs</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>\)</string>
 					<key>name</key>
-					<string>meta.definition.method.source.cs</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#statementRemainder</string>
-						</dict>
-					</array>
+					<string>meta.method.source.cs</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.method-parameters.begin.source.cs</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.method-parameters.end.source.cs</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.method-call.source.cs</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>,</string>
+					<key>name</key>
+					<string>punctuation.definition.seperator.parameter.source.cs</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#code</string>
 				</dict>
 			</array>
 		</dict>
@@ -568,27 +603,6 @@
 					<string>\\.</string>
 					<key>name</key>
 					<string>constant.character.escape.source.cs</string>
-				</dict>
-			</array>
-		</dict>
-		<key>statementRemainder</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>\(</string>
-					<key>end</key>
-					<string>(?=\))</string>
-					<key>name</key>
-					<string>meta.definition.param-list.source.cs</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#builtinTypes</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>

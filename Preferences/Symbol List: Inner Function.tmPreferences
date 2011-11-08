@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Symbol List: Inner Function</string>
+	<string>Symbol List: Method</string>
 	<key>scope</key>
-	<string>meta.definition.method.source.cs, meta.definition.operator.source.cs</string>
+	<string>source.cs meta.class.body meta.method.identifier</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
