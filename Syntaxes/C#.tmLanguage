@@ -204,6 +204,10 @@
 					<key>include</key>
 					<string>#builtinTypes</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#documentation</string>
+				</dict>
 			</array>
 		</dict>
 		<key>comments</key>
@@ -451,6 +455,17 @@
 					<string>\]</string>
 					<key>name</key>
 					<string>meta.method.annotation.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#constants</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#preprocessor</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -485,6 +500,10 @@
 								<dict>
 									<key>include</key>
 									<string>#builtinTypes</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#keywords</string>
 								</dict>
 							</array>
 						</dict>
