@@ -110,66 +110,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>include</key>
-			<string>#comments</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#class</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#method</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(true|false|null|this|base)\b</string>
-			<key>name</key>
-			<string>constant.language.source.cs</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
-			<key>name</key>
-			<string>constant.numeric.source.cs</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(if|else|while|for|foreach|do|return|continue|break|switch|case|default|goto|throw|try|catch|finally|lock|yield)\b</string>
-			<key>name</key>
-			<string>keyword.control.source.cs</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(new|is|checked|unchecked|typeof|sizeof|override|in|out|ref|readonly|params|stackalloc|as)\b</string>
-			<key>name</key>
-			<string>keyword.operator.source.cs</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(event|delegate|explicit|implicit|in|set|get)\b</string>
-			<key>name</key>
-			<string>keyword.other.source.cs</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|override|extern|unsafe|readonly|volatile|operator)\b</string>
-			<key>name</key>
-			<string>storage.modifier.source.cs</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#doubleQuotedStringLiteral</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#doubleQuotedString</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#singleQuotedString</string>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -182,10 +122,6 @@
 			<string>^\s*(using)\s+([^ ;]*);</string>
 			<key>name</key>
 			<string>meta.keyword.using.source.cs</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#builtinTypes</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -207,18 +143,8 @@
 			<string>meta.keyword.namespace.source.cs</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.control.import.source.cs</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>^\s*#\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
-			<key>name</key>
-			<string>meta.preprocessor.source.cs</string>
+			<key>include</key>
+			<string>#code</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -240,7 +166,7 @@
 			<key>begin</key>
 			<string>(?x)^\s*                                                    # start of line
 ((?:\b(?:new|public|protected|internal|private|abstract|sealed|static)\b\s)*)   # class-modifiers
-((class|enum|struct)\s+                                                          # type
+((class|enum|struct)\s+                                                         # type
 ([A-Za-z_]\w+))\b</string>
 			<key>captures</key>
 			<dict>
@@ -304,6 +230,40 @@
 				</dict>
 			</array>
 		</dict>
+		<key>code</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#class</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#method</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#preprocessor</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#builtinTypes</string>
+				</dict>
+			</array>
+		</dict>
 		<key>comments</key>
 		<dict>
 			<key>patterns</key>
@@ -339,6 +299,36 @@
 					<string>$\n?</string>
 					<key>name</key>
 					<string>comment.line.double-slash.source.cs</string>
+				</dict>
+			</array>
+		</dict>
+		<key>constants</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(true|false|null|this|base)\b</string>
+					<key>name</key>
+					<string>constant.language.source.cs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+					<key>name</key>
+					<string>constant.numeric.source.cs</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#doubleQuotedStringLiteral</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#doubleQuotedString</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#singleQuotedString</string>
 				</dict>
 			</array>
 		</dict>
@@ -390,6 +380,36 @@
 			<string>@"([^"]|"")*"</string>
 			<key>name</key>
 			<string>string.quoted.double.literal.source.cs</string>
+		</dict>
+		<key>keywords</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\b(if|else|while|for|foreach|do|return|continue|break|switch|case|default|goto|throw|try|catch|finally|lock|yield)\b</string>
+					<key>name</key>
+					<string>keyword.control.source.cs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(new|is|checked|unchecked|typeof|sizeof|override|in|out|ref|readonly|params|stackalloc|as)\b</string>
+					<key>name</key>
+					<string>keyword.operator.source.cs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(event|delegate|explicit|implicit|in|set|get)\b</string>
+					<key>name</key>
+					<string>keyword.other.source.cs</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|override|extern|unsafe|readonly|volatile|operator)\b</string>
+					<key>name</key>
+					<string>storage.modifier.source.cs</string>
+				</dict>
+			</array>
 		</dict>
 		<key>method</key>
 		<dict>
@@ -476,6 +496,21 @@
 					</array>
 				</dict>
 			</array>
+		</dict>
+		<key>preprocessor</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.import.source.cs</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*#\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
+			<key>name</key>
+			<string>meta.preprocessor.source.cs</string>
 		</dict>
 		<key>singleQuotedString</key>
 		<dict>
