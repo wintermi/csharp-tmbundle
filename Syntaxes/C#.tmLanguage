@@ -414,6 +414,10 @@
 							<key>include</key>
 							<string>#preprocessor</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>#builtinTypes</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
