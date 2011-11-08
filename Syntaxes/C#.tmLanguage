@@ -234,6 +234,19 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+			    <dict>
+					<key>begin</key>
+					<string>{</string>
+					<key>end</key>
+					<string>}</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#code</string>
+						</dict>
+					</array>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#comments</string>
@@ -249,6 +262,10 @@
 				<dict>
 					<key>include</key>
 					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#storage-modifiers</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -381,6 +398,13 @@
 			<key>name</key>
 			<string>string.quoted.double.literal.source.cs</string>
 		</dict>
+		<key>storage-modifiers</key>
+		<dict>
+			<key>match</key>
+			<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|operator)\b</string>
+			<key>name</key>
+			<string>storage.modifier.source.cs</string>
+		</dict>
 		<key>keywords</key>
 		<dict>
 			<key>patterns</key>
@@ -402,12 +426,6 @@
 					<string>\b(event|delegate|explicit|implicit|in|set|get)\b</string>
 					<key>name</key>
 					<string>keyword.other.source.cs</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\b(internal|public|protected|private|static|const|new|sealed|abstract|override|extern|unsafe|readonly|volatile|operator)\b</string>
-					<key>name</key>
-					<string>storage.modifier.source.cs</string>
 				</dict>
 			</array>
 		</dict>
