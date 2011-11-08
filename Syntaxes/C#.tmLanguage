@@ -401,8 +401,6 @@
 							<string>punctuation.definition.comment.source.cs</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>(//).*$\n?</string>
 					<key>end</key>
 					<string>$\n?</string>
 					<key>name</key>
