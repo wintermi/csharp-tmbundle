@@ -285,7 +285,6 @@
 					<key>name</key>
 					<string>keyword.other.using.source.cs</string>
 				</dict>
-				<key>2</key>
 			</dict>
 			<key>match</key>
 			<string>^\s*(using)\s+([^ ;]*);</string>
