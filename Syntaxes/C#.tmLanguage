@@ -539,18 +539,37 @@
 		</dict>
 		<key>preprocessor</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>2</key>
+			<key>patterns</key>
+			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.toc-list.region.source.cs</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*#\s*(region)\b(.*)$</string>
 					<key>name</key>
-					<string>keyword.control.import.source.cs</string>
+					<string>meta.preprocessor.source.cs</string>
 				</dict>
-			</dict>
-			<key>match</key>
-			<string>^\s*#\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
-			<key>name</key>
-			<string>meta.preprocessor.source.cs</string>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.import.source.cs</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*#\s*(if|else|elif|endif|define|undef|warning|error|line|region|endregion)\b</string>
+					<key>name</key>
+					<string>meta.preprocessor.source.cs</string>
+				</dict>
+			</array>
 		</dict>
 		<key>storage-modifiers</key>
 		<dict>
