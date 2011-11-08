@@ -155,7 +155,7 @@
 ((?:\b(?:new|public|protected|internal|private|static|virtual|sealed|override|abstract|extern)\b\s*)*) 		# method-modifiers
 \b((?:\w+\.)*[A-Za-z_]\w*)\b\s*	                                                                      		# type
 (operator)\s+        			                                                                      		# operator overload
-((?:\+|-|!|~|\+\+|--|true|false|\*|/|%|\&amp;|\||\^|&lt;&lt;|&gt;&gt;|==|!=|&lt;|&gt;|&lt;=|&gt;=)\s*)	                          		# operator name
+((?:\+|-|!|~|\+\+|--|true|false|\*|/|%|\&amp;|\||\^|&lt;&lt;|&gt;&gt;|==|!=|&lt;|&gt;|&lt;=|&gt;=)\s*)      # operator name
 (?=\()</string>
 			<key>captures</key>
 			<dict>
