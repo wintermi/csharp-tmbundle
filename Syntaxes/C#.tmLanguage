@@ -426,7 +426,7 @@
 					<key>end</key>
 					<string>}|(?=;)</string>
 					<key>name</key>
-					<string>meta.new-method.source.cs</string>
+					<string>meta.new-object.source.cs</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -480,6 +480,67 @@
 							<string>(?=\w.*\s+\w+\s*\()</string>
 							<key>end</key>
 							<string>(?=\w+\s*\()</string>
+							<key>name</key>
+							<string>meta.method.return-type.source.cs</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#builtinTypes</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>{</string>
+							<key>end</key>
+							<string>(?=})</string>
+							<key>name</key>
+							<string>meta.method.body.source.cs</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#code</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?!new)(?=[\w&lt;].*\s+)(?=[^=]+\{)</string>
+					<key>end</key>
+					<string>}</string>
+					<key>name</key>
+					<string>meta.property.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#storage-modifiers</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(\w+)\s*(?={)</string>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.function.source.cs</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>(?={)</string>
+							<key>name</key>
+							<string>meta.method.identifier.source.cs</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?=\w.*\s+\w+\s*\{)</string>
+							<key>end</key>
+							<string>(?=\w+\s*\{)</string>
 							<key>name</key>
 							<string>meta.method.return-type.source.cs</string>
 							<key>patterns</key>

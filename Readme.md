@@ -13,5 +13,4 @@ Regions are marked in the symbol list as well.
 ## Planned Features ##
 
 * Symbol List:
-	* Properties
 	* Operators
