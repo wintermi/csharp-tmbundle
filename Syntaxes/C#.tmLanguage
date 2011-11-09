@@ -576,6 +576,20 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
+							<string>entity.name.function.preprocessor.source.cs</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*#\s*(define)\b\s*(\S*)</string>
+					<key>name</key>
+					<string>meta.preprocessor.source.cs</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
 							<string>keyword.control.import.source.cs</string>
 						</dict>
 					</dict>

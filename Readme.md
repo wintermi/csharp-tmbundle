@@ -15,5 +15,3 @@ Regions are marked in the symbol list as well.
 * Symbol List:
 	* Properties
 	* Operators
-	* #defines?
-	* Empty Regions?
