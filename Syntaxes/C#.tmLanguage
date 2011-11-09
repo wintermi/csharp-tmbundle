@@ -422,7 +422,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?=\s*new\s*)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
+					<string>(?=\bnew\s+)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
 					<key>end</key>
 					<string>}|(?=;)</string>
 					<key>name</key>
