@@ -31,23 +31,48 @@
 			<string>meta.keyword.using.source.cs</string>
 		</dict>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>^\s*((namespace)\s+([\w.]+))</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.other.namespace.source.cs</string>
+					<string>meta.namespace.identifier.source.cs</string>
 				</dict>
 				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.namespace.source.cs</string>
+				</dict>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.type.namespace.source.cs</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>^\s*(namespace)\s+([^ ]+)(?:\s*{)?$</string>
+			<key>end</key>
+			<string>}</string>
 			<key>name</key>
-			<string>meta.keyword.namespace.source.cs</string>
+			<string>meta.namespace.source.cs</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>{</string>
+					<key>end</key>
+					<string>(?=})</string>
+					<key>name</key>
+					<string>meta.namespace.body.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#code</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -105,7 +130,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.class.source.java</string>
+							<string>entity.name.type.class.source.cs</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -140,7 +165,7 @@
 					<key>end</key>
 					<string>(?=})</string>
 					<key>name</key>
-					<string>meta.class.body.source.java</string>
+					<string>meta.class.body.source.cs</string>
 					<key>patterns</key>
 					<array>
 						<dict>
