@@ -19,3 +19,7 @@ Regions are marked in the symbol list as well at an appropriate depth.
 * Parser: Proper function parameter lists
 	* Only expose params keyword here
 	* ( #builtinTypes, params )
+
+## Known Issues ##
+
+* Properties: Not accurate marked when { is on newline
