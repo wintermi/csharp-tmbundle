@@ -16,11 +16,7 @@ Regions are marked in the symbol list as well at an appropriate depth.
 * Parser: Accurate Property Bodies
 	* Only expose get/set/add/remove keywords here
 	* { #code }
-* Parser: Proper function parameter lists
-	* Only expose params keyword here
-	* ( #builtinTypes, params )
 
 ## Known Issues ##
 
 * Properties: Not accurate marked when { is on newline
-* Control statements (if/switch) sometimes look like fcn calls

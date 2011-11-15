@@ -207,10 +207,6 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#method-call</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#constants</string>
 				</dict>
 				<dict>
@@ -224,6 +220,10 @@
 				<dict>
 					<key>include</key>
 					<string>#preprocessor</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#method-call</string>
 				</dict>
 				<dict>
 					<key>include</key>
