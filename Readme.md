@@ -10,13 +10,5 @@ Regions are marked in the symbol list as well at an appropriate depth.
 
 # Todo #
 
-## Planned Features ##
-
 * Symbol List: Operators
-* Parser: Accurate Property Bodies
-	* Only expose get/set/add/remove keywords here
-	* { #code }
-
-## Known Issues ##
-
 * Properties: Not accurate marked when { is on newline
