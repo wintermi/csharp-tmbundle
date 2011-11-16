@@ -11,4 +11,4 @@ Regions are marked in the symbol list as well at an appropriate depth.
 # Todo #
 
 * Symbol List: Operators
-* Properties: Not accurate marked when { is on newline
+* Properties: Not accurately marked when { is on newline
