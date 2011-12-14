@@ -11,5 +11,3 @@ Regions are marked in the symbol list as well at an appropriate depth.
 ## Known Issues ##
 
 * Operators aren't listed in the symbol list
-* Constructor : base() show up in the symbol list / are marked as a new fcn
-* #if blocks / bodies are not indented properly

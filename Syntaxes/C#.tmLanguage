@@ -521,6 +521,29 @@
 						</dict>
 						<dict>
 							<key>begin</key>
+							<string>:\s*(base)\s*\(</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>constant.language.source.cs</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\)</string>
+							<key>name</key>
+							<string>meta.method.base-call.source.cs</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#builtinTypes</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
 							<string>{</string>
 							<key>end</key>
 							<string>(?=})</string>
