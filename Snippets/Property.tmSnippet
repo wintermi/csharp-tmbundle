@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:Type} ${2:Name} { get; set; }</string>
+	<string>${1:string} ${2:PropertyName} { get; set; }</string>
 	<key>name</key>
 	<string>Property</string>
 	<key>scope</key>
