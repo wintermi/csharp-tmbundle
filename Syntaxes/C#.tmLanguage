@@ -521,7 +521,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>:\s*(base)\s*\(</string>
+							<string>:\s*(this|base)\s*\(</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>

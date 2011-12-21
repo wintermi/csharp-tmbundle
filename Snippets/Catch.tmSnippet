@@ -3,25 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>try
-{
-	${2:// Code to try here}
-}
-catch (${1:System.Exception} e) 
-{
-	${3:// Code to handle exception here}
-}
-finally
-{
-	${0:// Code to execute after try (and possibly catch) here}
+	<string>catch (${1:Exception} ${2:e}) {
+	$0
 }</string>
 	<key>name</key>
-	<string>Try / Catch / Finally</string>
+	<string>Catch</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>try</string>
+	<string>ca</string>
 	<key>uuid</key>
-	<string>9E4C6824-F9E0-4B64-B1F6-8DCF5F610DAC</string>
+	<string>76B992D8-9269-463E-AD5E-73C8BB795943</string>
 </dict>
 </plist>

@@ -4,16 +4,14 @@
 <dict>
 	<key>content</key>
 	<string>default:
-	$0
-	break;
-</string>
+	$0</string>
 	<key>name</key>
 	<string>Default</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>default</string>
+	<string>de</string>
 	<key>uuid</key>
-	<string>1C9A1C2A-112F-44C7-AD51-DEE6BBF0FC35</string>
+	<string>F95BD140-09C0-4B23-8AE3-6C7D4EC30E29</string>
 </dict>
 </plist>

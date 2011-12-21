@@ -3,20 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/// &lt;summary&gt;
-///   Description of private method goes here
-/// &lt;/summary&gt;
-private ${1:ReturnType} ${2:MethodName}(${3:ParameterType} ${4:ParameterName})
-{
-	$0
-}</string>
+	<string>override </string>
 	<key>name</key>
-	<string>Private Method</string>
+	<string>Override</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>pm</string>
+	<string>over</string>
 	<key>uuid</key>
-	<string>52788632-ECB3-4F3F-9423-03E0E35B20C8</string>
+	<string>C74A250A-37B2-4058-B602-AB63C57A56DB</string>
 </dict>
 </plist>

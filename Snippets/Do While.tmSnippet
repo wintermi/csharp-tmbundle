@@ -3,11 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>do
-{
+	<string>do {
 	$0
-} while (${1:Condition});
-</string>
+} while (${1:Condition});</string>
 	<key>name</key>
 	<string>Do While</string>
 	<key>scope</key>

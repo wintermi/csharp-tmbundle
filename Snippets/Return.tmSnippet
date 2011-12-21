@@ -3,25 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:public} ${2:Type} ${3:PropertyName}
-{
-	get
-	{
-		return ${4:${3/./\l$0/}};
-	}
-	set
-	{
-		${5:$4} = value;
-	}
-}
-</string>
+	<string>return </string>
 	<key>name</key>
-	<string>Property (Read-Write)</string>
+	<string>Return</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>rw</string>
+	<string>re</string>
 	<key>uuid</key>
-	<string>F9184AE4-4ECF-4D4F-8D18-87CC28EFE0B8</string>
+	<string>69AEB000-1DEC-4EDA-94CC-832DB8F64203</string>
 </dict>
 </plist>

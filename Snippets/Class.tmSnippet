@@ -3,10 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/// &lt;summary&gt;
-///   Description of class goes here
-/// &lt;/summary&gt;
-${1:public} class ${2:ClassName}
+	<string>class ${1:${TM_FILENAME/(.*?)(\..+)/$1/}}
 {
 	$0
 }</string>
@@ -15,7 +12,7 @@ ${1:public} class ${2:ClassName}
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>class</string>
+	<string>cl</string>
 	<key>uuid</key>
 	<string>B20CDBF9-F842-462E-BA33-AE671E0D3D25</string>
 </dict>

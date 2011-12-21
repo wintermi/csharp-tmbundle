@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>for (${1:Initializer}; ${2:Condition}; ${3:Update})
-{
+	<string>for (${1:Initializer}; ${2:Condition}; ${3:Update}) {
 	$0
 }</string>
 	<key>name</key>

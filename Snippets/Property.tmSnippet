@@ -3,20 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/// &lt;summary&gt;
-///   Description of public method goes here
-/// &lt;/summary&gt;
-public ${1:ReturnType} ${2:MethodName}(${3:ParameterType} ${4:ParameterName})
-{
-	$0
-}</string>
+	<string>${1:Type} ${2:Name} { get; set; }</string>
 	<key>name</key>
-	<string>Public Method</string>
+	<string>Property</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>pum</string>
+	<string>prop</string>
 	<key>uuid</key>
-	<string>58303EDB-6E36-4222-9422-4104932A8E51</string>
+	<string>6F1BBA6C-3E5F-4A1B-B58D-8F1081520E28</string>
 </dict>
 </plist>

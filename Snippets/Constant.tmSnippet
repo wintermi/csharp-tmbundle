@@ -3,19 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>/// &lt;summary&gt;
-///   Description of delegate goes here
-/// &lt;/summary&gt;
-public delegate ${1:ReturnType} ${2:DelegateName}(${3:ParameterType} ${4:ParameterName});
-$0
-</string>
+	<string>const public final ${1:String} ${2:Var} = $3;$0</string>
 	<key>name</key>
-	<string>Delegate</string>
+	<string>Constant</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>delegate</string>
+	<string>co</string>
 	<key>uuid</key>
-	<string>EED18275-324E-4176-8806-89938FE0146B</string>
+	<string>FFC74C60-92C2-494B-A150-D743F809B75C</string>
 </dict>
 </plist>

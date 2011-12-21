@@ -3,8 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>while (${1:Condition})
-{
+	<string>while (${1:Condition}) {
 	$0
 }</string>
 	<key>name</key>
@@ -12,7 +11,7 @@
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>while</string>
+	<string>wh</string>
 	<key>uuid</key>
 	<string>2C7396D8-DBE4-4D5D-A659-E5CC2BA19CCE</string>
 </dict>

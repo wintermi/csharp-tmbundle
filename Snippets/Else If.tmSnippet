@@ -3,17 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>else if (${1:Condition})
-{
+	<string>else if (${1:Condition}) {
 	$0
-}
-</string>
+}</string>
 	<key>name</key>
 	<string>Else If</string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
-	<string>elseif</string>
+	<string>elif</string>
 	<key>uuid</key>
 	<string>F8D557E9-81DE-45FF-A089-F2B3F8CD6B4F</string>
 </dict>
