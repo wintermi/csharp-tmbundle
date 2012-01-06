@@ -406,13 +406,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(new|is|checked|unchecked|typeof|sizeof|override|in|out|ref|readonly|params|stackalloc|as)\b</string>
+					<string>\b(new|is|using|checked|unchecked|typeof|sizeof|override|in|out|ref|readonly|params|stackalloc|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.source.cs</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(var|event|delegate|explicit|implicit|in|add|remove|set|get)\b</string>
+					<string>\b(var|event|delegate|explicit|implicit|in|add|remove|set|get|value)\b</string>
 					<key>name</key>
 					<string>keyword.other.source.cs</string>
 				</dict>
