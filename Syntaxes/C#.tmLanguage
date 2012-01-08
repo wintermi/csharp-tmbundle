@@ -53,6 +53,14 @@
 			</dict>
 			<key>end</key>
 			<string>}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.namespace.end.source.cs</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.namespace.source.cs</string>
 			<key>patterns</key>
@@ -60,6 +68,14 @@
 				<dict>
 					<key>begin</key>
 					<string>{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.namespace.begin.source.cs</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>(?=})</string>
 					<key>name</key>
@@ -81,6 +97,43 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>block</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.block.begin.source.cs</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.block.end.source.cs</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.block.source.cs</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#code</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>builtinTypes</key>
 		<dict>
 			<key>patterns</key>
@@ -162,6 +215,14 @@
 				<dict>
 					<key>begin</key>
 					<string>{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.class.begin.source.cs</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>(?=})</string>
 					<key>name</key>
@@ -185,17 +246,8 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>{</string>
-					<key>end</key>
-					<string>}</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#code</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#block</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -449,7 +501,7 @@
 					<key>begin</key>
 					<string>(?=\bnew\s+)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
 					<key>end</key>
-					<string>}|(?=;)</string>
+					<string>(?={)</string>
 					<key>name</key>
 					<string>meta.new-object.source.cs</string>
 					<key>patterns</key>
@@ -464,7 +516,15 @@
 					<key>begin</key>
 					<string>(?!new)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
 					<key>end</key>
-					<string>}|(?=;)</string>
+					<string>(})|(?=;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.method.end.source.cs</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.method.source.cs</string>
 					<key>patterns</key>
@@ -545,6 +605,14 @@
 						<dict>
 							<key>begin</key>
 							<string>{</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.section.method.begin.source.cs</string>
+								</dict>
+							</dict>
 							<key>end</key>
 							<string>(?=})</string>
 							<key>name</key>
@@ -564,6 +632,14 @@
 					<string>(?!new)(?=[\w&lt;].*\s+)(?=[^=]+\{)</string>
 					<key>end</key>
 					<string>}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.section.property.end.source.cs</string>
+						</dict>
+					</dict>
 					<key>name</key>
 					<string>meta.property.source.cs</string>
 					<key>patterns</key>
@@ -606,6 +682,14 @@
 						<dict>
 							<key>begin</key>
 							<string>{</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.section.property.begin.source.cs</string>
+								</dict>
+							</dict>
 							<key>end</key>
 							<string>(?=})</string>
 							<key>name</key>

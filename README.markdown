@@ -11,4 +11,5 @@ Regions are marked in the symbol list as well at an appropriate depth.
 ## Known Issues ##
 
 * Operators aren't listed in the symbol list
+* Properties where '{' are on a new line aren't in the symbol list
 * Implicit interfaces (e.g. void IFooBar.Baz() are marked as Baz())
