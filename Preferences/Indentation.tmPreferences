@@ -10,20 +10,20 @@
 	<dict>
 		<key>decreaseIndentPattern</key>
 		<string>(?x)
-	    ^ (.*\*/)? \s* \} ( [^}{"']* \{ | \s* while \s* \( .* )? [;\s]* (//.*|/\*.*\*/\s*)? $
+		^ (.*\*/)? \s* \} ( [^}{"']* \{ | \s* while \s* \( .* )? [;\s]* (//.*|/\*.*\*/\s*)? $
 	</string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
-	    ^ .* \{ [^}"']* $
+		^ .* \{ [^}"']* $
 	|   ^ \s* \{ \} $
 	</string>
 		<key>indentNextLinePattern</key>
 		<string>(?x)^
-	    (?! .* [;:{}]                   # do not indent when line ends with ;, :, {, or }
-	        \s* (//|/[*] .* [*]/ \s* $) #  …account for potential trailing comment
-	    )
-	    .* [^\s;:{}] \s* $              # indent next if this one isn’t
-	                                    #  terminated with ;, :, {, or }
+		(?! .* [;:{}]                   # do not indent when line ends with ;, :, {, or }
+			\s* (//|/[*] .* [*]/ \s* $) #  …account for potential trailing comment
+		)
+		.* [^\s;:{}] \s* $              # indent next if this one isn’t
+										#  terminated with ;, :, {, or }
 	</string>
 		<key>unIndentedLinePattern</key>
 		<string>^\s*((/\*|\*/|//|#).*)?$</string>
