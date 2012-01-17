@@ -501,7 +501,7 @@
 					<key>begin</key>
 					<string>(?=\bnew\s+)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
 					<key>end</key>
-					<string>(?={)</string>
+					<string>(?={|;)</string>
 					<key>name</key>
 					<string>meta.new-object.source.cs</string>
 					<key>patterns</key>
