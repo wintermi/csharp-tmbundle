@@ -8,7 +8,7 @@
 	$0
 }</string>
 	<key>name</key>
-	<string>Namespace</string>
+	<string>Namespace                  </string>
 	<key>scope</key>
 	<string>source.cs</string>
 	<key>tabTrigger</key>
