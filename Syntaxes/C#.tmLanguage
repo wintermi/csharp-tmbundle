@@ -458,13 +458,19 @@
 				</dict>
 				<dict>
 					<key>match</key>
+					<string>\b(from|where|select)\b</string>
+					<key>name</key>
+					<string>keyword.linq.source.cs</string>
+				</dict>
+				<dict>
+					<key>match</key>
 					<string>\b(new|is|using|checked|unchecked|typeof|sizeof|override|in|out|ref|readonly|params|stackalloc|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.source.cs</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(var|event|delegate|explicit|implicit|in|add|remove|set|get|value)\b</string>
+					<string>\b(var|event|delegate|in|add|remove|set|get|value)\b</string>
 					<key>name</key>
 					<string>keyword.other.source.cs</string>
 				</dict>
@@ -800,7 +806,7 @@
 		<key>storage-modifiers</key>
 		<dict>
 			<key>match</key>
-			<string>\b(event|delegate|internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|operator)\b</string>
+			<string>\b(event|delegate|internal|public|protected|private|static|const|new|sealed|abstract|virtual|override|extern|unsafe|readonly|volatile|implicit|explicit|operator)\b</string>
 			<key>name</key>
 			<string>storage.modifier.source.cs</string>
 		</dict>
