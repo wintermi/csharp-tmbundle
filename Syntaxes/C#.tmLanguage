@@ -535,7 +535,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(\w+)\s*\(</string>
+							<string>([\w.]+)\s*\(</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
@@ -566,9 +566,9 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(?=\w.*\s+\w+\s*\()</string>
+							<string>(?=\w.*\s+[\w.]+\s*\()</string>
 							<key>end</key>
-							<string>(?=\w+\s*\()</string>
+							<string>(?=[\w.]+\s*\()</string>
 							<key>name</key>
 							<string>meta.method.return-type.source.cs</string>
 							<key>patterns</key>
@@ -650,7 +650,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(\w+)\s*(?={)</string>
+							<string>([\w.]+)\s*(?={)</string>
 							<key>captures</key>
 							<dict>
 								<key>1</key>
@@ -666,9 +666,9 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>(?=\w.*\s+\w+\s*\{)</string>
+							<string>(?=\w.*\s+[\w.]+\s*\{)</string>
 							<key>end</key>
-							<string>(?=\w+\s*\{)</string>
+							<string>(?=[\w.]+\s*\{)</string>
 							<key>name</key>
 							<string>meta.method.return-type.source.cs</string>
 							<key>patterns</key>

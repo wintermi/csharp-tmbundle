@@ -52,8 +52,9 @@ If you'd like to avoid the command line altogether, you can download the bundle 
 ## Known Issues
 
 * Operators aren't listed in the symbol list
+* Methods and Properties with generics in the name aren't in the symbol list
+* Certain methods, e.g. TimeSpan.FromSeconds() are incorrectly flagged in the symbol list
 * Properties where '{' are on a new line aren't in the symbol list
-* Implicit interfaces (e.g. void IFooBar.Baz() are marked as Baz())
 
 ## Other Stuff
 
