@@ -464,7 +464,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(new|is|using|checked|unchecked|typeof|sizeof|override|in|out|ref|readonly|params|stackalloc|as)\b</string>
+					<string>\b(new|is|using|checked|unchecked|typeof|sizeof|override|in|readonly|stackalloc|as)\b</string>
 					<key>name</key>
 					<string>keyword.operator.source.cs</string>
 				</dict>
@@ -558,15 +558,7 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#builtinTypes</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#keywords</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#constants</string>
+									<string>#parameters</string>
 								</dict>
 							</array>
 						</dict>
@@ -752,6 +744,55 @@
 				<dict>
 					<key>include</key>
 					<string>#code</string>
+				</dict>
+			</array>
+		</dict>
+		<key>parameters</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(ref|params|out)?\s*\b([\w.\[\]]+)\s+(\w+)\s*(=)?</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.modifier.source.cs</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.generic.source.cs</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.source.cs</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.assignment.source.cs</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?:(,)|(?=[\)]))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.separator.parameter.source.cs</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#constants</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block</string>
 				</dict>
 			</array>
 		</dict>
