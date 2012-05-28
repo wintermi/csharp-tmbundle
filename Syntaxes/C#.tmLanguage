@@ -790,6 +790,10 @@
 					<key>include</key>
 					<string>#constants</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block</string>
+				</dict>
 			</array>
 		</dict>
 		<key>preprocessor</key>
