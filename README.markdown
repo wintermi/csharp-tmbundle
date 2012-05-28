@@ -55,7 +55,8 @@ If you'd like to avoid the command line altogether, you can download the bundle 
 * Properties where '{' are on a new line aren't in the symbol list
 * Methods with generics in the name are missing from the symbol list
 * Certain methods, e.g. TimeSpan.FromSeconds() are incorrectly added to the symbol list
-* Method signature variables with generic types and arrays[] aren't correctly *italicized* in TextMate 2
+* Method signature variables with generic types aren't correctly *italicized* in TextMate 2
+* Method signatures with array [] aren't correctly *italicized* (though array[] works) in TextMate 2
 
 ## Other Stuff
 
