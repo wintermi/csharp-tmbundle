@@ -464,7 +464,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(new|is|using|checked|unchecked|typeof|sizeof|override|readonly|stackalloc|as)\b</string>
+					<string>\b(new|is|as|using|checked|unchecked|typeof|sizeof|override|readonly|stackalloc)\b</string>
 					<key>name</key>
 					<string>keyword.operator.source.cs</string>
 				</dict>
