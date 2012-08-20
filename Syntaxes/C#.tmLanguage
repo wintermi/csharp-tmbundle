@@ -452,25 +452,25 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(if|else|while|for|foreach|do|return|continue|break|switch|case|default|goto|throw|try|catch|finally|lock|yield)\b</string>
+					<string>\b(if|else|while|for|foreach|in|do|return|continue|break|switch|case|default|goto|throw|try|catch|finally|lock|yield)\b</string>
 					<key>name</key>
 					<string>keyword.control.source.cs</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(from|where|select)\b</string>
+					<string>\b(from|where|select|group|into|orderby|join|let|on|equals|by|ascending|descending)\b</string>
 					<key>name</key>
 					<string>keyword.linq.source.cs</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(new|is|using|checked|unchecked|typeof|sizeof|override|in|readonly|stackalloc|as)\b</string>
+					<string>\b(new|is|as|using|checked|unchecked|typeof|sizeof|override|readonly|stackalloc)\b</string>
 					<key>name</key>
 					<string>keyword.operator.source.cs</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(var|event|delegate|in|add|remove|set|get|value)\b</string>
+					<string>\b(var|event|delegate|add|remove|set|get|value)\b</string>
 					<key>name</key>
 					<string>keyword.other.source.cs</string>
 				</dict>

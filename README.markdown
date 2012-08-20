@@ -57,6 +57,7 @@ If you'd like to avoid the command line altogether, you can download the bundle 
 * Certain methods, e.g. TimeSpan.FromSeconds() are incorrectly added to the symbol list
 * Method signature variables with generic types aren't correctly *italicized* in TextMate 2
 * Method signatures with array [] aren't correctly *italicized* (though array[] works) in TextMate 2
+* Method calls do not correctly highlight out and ref keywords (though method signatures do)
 
 ## Other Stuff
 
