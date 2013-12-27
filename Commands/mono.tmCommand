@@ -14,7 +14,7 @@ echo | mono $file</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
-	<string>Run</string>
+	<string>Run (mono)</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>uuid</key>

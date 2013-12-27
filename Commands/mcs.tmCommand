@@ -7,13 +7,13 @@
 	<key>command</key>
 	<string># just to remind you of some useful environment variables
 # see Help / Environment Variables for the full list
-gmcs $TM_FILEPATH</string>
+mcs $TM_FILEPATH</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@b</string>
 	<key>name</key>
-	<string>GMCS</string>
+	<string>Compile (mcs)</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>uuid</key>

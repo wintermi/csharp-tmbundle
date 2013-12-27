@@ -13,6 +13,7 @@
 		<key>items</key>
 		<array>
 			<string>34FADC09-D0B7-4916-82D7-79B4A6F22F95</string>
+			<string>------------------------------------</string>
 			<string>970A0152-E351-4E75-8A2B-665662ECDA02</string>
 			<string>7A193B79-6E9F-4BFE-B5B0-18C75098DC5A</string>
 			<string>71112881-47F5-4609-A84C-88C642193852</string>
@@ -31,7 +32,7 @@
 					<string>B1D476BF-64DF-4BAD-9EC2-C77EBE535340</string>
 				</array>
 				<key>name</key>
-				<string>Mono</string>
+				<string>Compile &amp; Run</string>
 			</dict>
 			<key>71112881-47F5-4609-A84C-88C642193852</key>
 			<dict>
