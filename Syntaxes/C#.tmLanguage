@@ -520,7 +520,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?!new)(?=[\w&lt;].*\s+)(?=[^=]+\()</string>
+					<string>(?!new)(?=[\w&lt;][^=]*\s+[^=]+\()</string>
 					<key>end</key>
 					<string>(})|(?=;)</string>
 					<key>endCaptures</key>
