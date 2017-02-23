@@ -1,11 +1,6 @@
-# C# TextMate Bundle ![Project status](http://stillmaintained.com/wintermi/csharp-tmbundle.png)
+# C# TextMate Bundle
 
 This is the C# language TextMate bundle
-
-## Authors
-
-* Matthew Winter [@wintermi](https://github.com/wintermi)
-* Adam Lickel [@lickel](https://github.com/lickel)
 
 ## License
 
