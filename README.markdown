@@ -60,14 +60,6 @@ If you'd like to avoid the command line altogether, you can download the bundle 
 
 ## History
 
-### Version 2
+* Rewrite of the original C# bundle heavily inspired by the Java bundle in readiness for TextMate 2.x
+* Removed TextMate 1.x bundle as no longer supported
 
-This is a substantial rewrite of the original C# bundle heavily inspired by the Java bundle.
-
-It has a hierarchical definition, allowing inner classes, etc. The symbol list will show up to several layers deep. Regions are marked in the symbol list as well at an appropriate depth.
-
-### Version 1
-
-The original bundle was designed for use by TextMate 1.x and the e-Text Editor (Windows), so if you have issues with Version 2 of the bundle, please report a bug.
-
-If you need access to the original bundle, then this has been tagged on GitHub and made available to download. [C# Bundle v1.0](https://github.com/wintermi/csharp-tmbundle/zipball/v1.0)
